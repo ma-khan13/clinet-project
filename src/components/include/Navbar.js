@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="row d-flex justify-content-between">
           <div className="col d-md-block nav-logo">
             <h1>
-              <a href="#">Khan</a>
+              <a href="#">TRAVEL TOUR</a>
             </h1>
           </div>
           <div className="col-md-4 nav-drawer">
@@ -18,7 +18,7 @@ const Navbar = () => {
               <div className="add-guests">
                 <p>Add guests</p>
                 <span>
-                  <FontAwesomeIcon icon={faCoffee} />
+                <i className="fa-solid fa-magnifying-glass"></i>
                 </span>
               </div>
             </div>
@@ -30,15 +30,15 @@ const Navbar = () => {
               </div>
               <div className="language">
                 <p>
-                  <FontAwesomeIcon icon={faCoffee} />
+                  <i className="fa-solid fa-earth-americas"></i>
                 </p>
               </div>
               <div className="hamburger">
                 <p>
-                  <FontAwesomeIcon icon={faCoffee} />
+                  <i className="fa-solid fa-bars-staggered"></i>
                 </p>
                 <p>
-                  <FontAwesomeIcon className="user" icon={faCoffee} />
+                  <i className="fa-solid fa-circle-user"></i>
                 </p>
               </div>
             </div>

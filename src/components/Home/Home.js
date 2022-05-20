@@ -1,12 +1,14 @@
 import React from 'react';
 import About from './include/About';
 import Banner from './include/Banner';
+import HomeItemCard from "./include/HomeItemCard";
 
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
-            <About></About>
+            <Banner/>
+            <About/>
+            <HomeItemCard/>
         </div>
     );
 };

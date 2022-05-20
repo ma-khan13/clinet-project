@@ -8,21 +8,21 @@ const Topbar = () => {
         <div className="container">
           <div className="row">
             <div className="col social-left">
-              <p>Email : mdasifkhan089@gmail.com</p>
-              <p>Phone : 01756876313</p>
+              <p><i className="fa-solid fa-envelope"/> traveltour@gmail.com</p>
+              <p><i className="fa-solid fa-phone"></i> 01756876313</p>
             </div>
             <div className="col social-right">
               <a href='#'>
-                <FontAwesomeIcon icon={faCoffee} />
+                <i className="fa-brands fa-facebook-square"></i>
               </a>
               <a href='#'>
-                <FontAwesomeIcon icon={faCoffee} />
+                <i className="fa-brands fa-twitter-square"></i>
               </a>
               <a href='#'>
-                <FontAwesomeIcon icon={faCoffee} />
+                <i className="fa-brands fa-instagram-square"></i>
               </a>
               <a href='#'>
-                <FontAwesomeIcon icon={faCoffee} />
+                <i className="fa-brands fa-whatsapp-square"></i>
               </a>
             </div>
           </div>

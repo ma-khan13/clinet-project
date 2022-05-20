@@ -78,8 +78,20 @@ const Footer = () => {
       >
         <Offcanvas.Header closeButton></Offcanvas.Header>
       <Offcanvas.Body closeButton>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <div className="row">
+            <div className="col-md-3">
+                <h6>Support</h6>
+                <ul>
+                  <li>Help Center</li>
+                  <li>AirCover</li>
+                  <li>Safety information</li>
+                  <li>Supporting people with disabilities</li>
+                  <li>Cancellation options</li>
+                  <li>Our COVID-19 Response</li>
+                  <li>Report a neighborhood concern</li>
+                </ul>
+            </div>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </section>
