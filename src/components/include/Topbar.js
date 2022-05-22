@@ -8,8 +8,8 @@ const Topbar = () => {
         <div className="container">
           <div className="row">
             <div className="col social-left">
-              <p><i className="fa-solid fa-envelope"/> traveltour@gmail.com</p>
-              <p><i className="fa-solid fa-phone"></i> 01756876313</p>
+              <a href='mailto:traveltour@gmail.com'><i className="fa-solid fa-envelope"/> traveltour@gmail.com</a>
+              <a href='tel:01756876313'><i className="fa-solid fa-phone"></i> 01756876313</a>
             </div>
             <div className="col social-right">
               <a href='#'>
