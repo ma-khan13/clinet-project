@@ -38,7 +38,7 @@ p {
       font-size: 18px;
       margin: 0 5px;
       &:hover {
-       color: cyan;
+        color: cyan;
       }
     }
   }
@@ -221,42 +221,42 @@ p {
         }
       }
     }}
-    .content-right {
-      padding-bottom: 55px;
-      .image-right {
-        padding: 0 0;
-        img {
-          width: 100%;
-          height: 300px;
-          object-fit: cover;
-          object-position: top;
-        }
-      }
-    }
-    .text-container-bottom{
-      display: flex;
-      padding: 0;
-      .border-right{
-        display: none;
-        height: 100%;
-        width: 15px;
-        background-color: rgb(234, 241, 241);
-        margin: 0 10px;
-        position: relative;
-        order: 1;
-        &::before{
-          content: '';
-          height: 50px;
-          width: 5px;
-          background-color: #a8a0a0;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-        }
+  .content-right {
+    padding-bottom: 55px;
+    .image-right {
+      padding: 0 0;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
       }
     }
   }
+  .text-container-bottom{
+    display: flex;
+    padding: 0;
+    .border-right{
+      display: none;
+      height: 100%;
+      width: 15px;
+      background-color: rgb(234, 241, 241);
+      margin: 0 10px;
+      position: relative;
+      order: 1;
+      &::before{
+        content: '';
+        height: 50px;
+        width: 5px;
+        background-color: #a8a0a0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+}
 
 // Footer section scss
 
@@ -325,12 +325,12 @@ p {
 
 .subscribe{
   input{
-  border:2px solid #008B8B;
-  border-radius: 10px 0 0 10px;
-  &:focus {
-    border-color: #48b9b9;
-    box-shadow: none;
-}}
+    border:2px solid #008B8B;
+    border-radius: 10px 0 0 10px;
+    &:focus {
+      border-color: #48b9b9;
+      box-shadow: none;
+    }}
 }
 
 .download-app{
@@ -368,15 +368,15 @@ p {
   0%{
     transform: translateY(5px);
   }100%{
-    transform: translateY(-0px);
-  }
+     transform: translateY(-0px);
+   }
 }
 
 .home-card-item{
   box-shadow: 0 0 10px silver;
   border-radius: 10px;
   transition: transform .5s ease-in-out;
-  
+
   span{
     background-color: #008B8B;
     padding: 3px;
@@ -415,7 +415,7 @@ p {
         font-size: 20px;
       }
     }
-    
+
   }
   &:hover{
     transform: scale(1.1);
