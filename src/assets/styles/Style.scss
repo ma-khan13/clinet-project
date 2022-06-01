@@ -12,12 +12,13 @@ p {
   padding: 2px 0;
   .social-left {
     display: flex;
-    p {
+    a {
       padding: 3px 0;
-      margin: 0 5px 0 0;
+      margin: 0 7px 0 0;
       transition: 1s;
       font-weight: 300;
       font-size: 14px;
+      text-decoration: none;
       &:hover {
         color: $hover_color;
       }
@@ -37,7 +38,7 @@ p {
       font-size: 18px;
       margin: 0 5px;
       &:hover {
-       color: cyan;
+        color: cyan;
       }
     }
   }
@@ -220,68 +221,52 @@ p {
         }
       }
     }}
-    .content-right {
-      padding-bottom: 55px;
-      .image-right {
-        padding: 0 0;
-        img {
-          width: 100%;
-          height: 300px;
-          object-fit: cover;
-          object-position: top;
-        }
-      }
-    }
-    .text-container-bottom{
-      display: flex;
-      padding: 0;
-      .border-right{
-        display: none;
-        height: 100%;
-        width: 15px;
-        background-color: rgb(234, 241, 241);
-        margin: 0 10px;
-        position: relative;
-        order: 1;
-        &::before{
-          content: '';
-          height: 50px;
-          width: 5px;
-          background-color: #a8a0a0;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-        }
+  .content-right {
+    padding-bottom: 55px;
+    .image-right {
+      padding: 0 0;
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
       }
     }
   }
+  .text-container-bottom{
+    display: flex;
+    padding: 0;
+    .border-right{
+      display: none;
+      height: 100%;
+      width: 15px;
+      background-color: rgb(234, 241, 241);
+      margin: 0 10px;
+      position: relative;
+      order: 1;
+      &::before{
+        content: '';
+        height: 50px;
+        width: 5px;
+        background-color: #a8a0a0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+}
 
 // Footer section scss
 
 .footer-area {
-  //position: fixed;
-
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 15px 0;
   border-top: 1px solid #ddd;
-  background-image: linear-gradient(90deg, rgba(0, 139, 139, 0.2), rgba(0, 139, 139, 0.1), rgba(0, 139, 139, 0.2));
-  h6{
-    text-transform: uppercase;
-    margin-bottom: 15px;
-  }
-  ul{
-    padding: 0;
-    li{
-      list-style: none;
-      padding: 3px 0;
-      cursor: pointer;
-      &:hover{
-        color: darkcyan;
-      }
-    }
-  }
+  background-color: white;
   .footer-left {
     .footer-link {
       display: flex;
@@ -338,6 +323,23 @@ p {
   }
 }
 
+.subscribe{
+  input{
+    border:2px solid #008B8B;
+    border-radius: 10px 0 0 10px;
+    &:focus {
+      border-color: #48b9b9;
+      box-shadow: none;
+    }}
+}
+
+.download-app{
+  img{
+    width: 150px;
+    padding: 0 10px;
+  }
+}
+
 .lead{
   text-align: justify!important;
 }
@@ -361,20 +363,34 @@ p {
     color: white;
   }
 }
+
+@keyframes newitem {
+  0%{
+    transform: translateY(5px);
+  }100%{
+     transform: translateY(-0px);
+   }
+}
+
 .home-card-item{
   box-shadow: 0 0 10px silver;
   border-radius: 10px;
-  transition: all .2s ease-in-out;
-  position: relative;
+  transition: transform .5s ease-in-out;
+
+  span{
+    background-color: #008B8B;
+    padding: 3px;
+    border-radius: 4px;
+    position: absolute;
+    text-align: center;
+    bottom: -15px;
+    width: 50px;
+    right: 10px;
+    color: white;
+    animation: newitem 1s infinite alternate;
+  }
   .image-container{
-    button{
-      background: transparent;
-      border: none;
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      color: red;
-    }
+    position: relative;
   }
   .content{
     padding: 15px;
@@ -389,6 +405,17 @@ p {
         color: darkcyan;
       }
     }
+    div{
+      .favourite{
+        border: none;
+        background-color: transparent;
+      }
+      i{
+        color: gray;
+        font-size: 20px;
+      }
+    }
+
   }
   &:hover{
     transform: scale(1.1);
@@ -406,32 +433,4 @@ p {
 }
 .slick-dots{
   bottom: 25px!important;
-}
-.category-area{
-  text-align: center;
-  .category-item{
-    text-align: center;
-    border: 1px solid silver;
-    border-radius: 10px;
-    img{
-      width: 35px;
-      margin: 0 auto;
-    }
-    p{
-      font-size: 13px;
-      margin-top: 5px;
-      color: darkcyan;
-      &:hover{
-        color: #004848;
-      }
-    }
-  }
-  .slick-slide {
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  //.slick-list {
-  //  margin: 0 -5px;
-  //}
-
 }
