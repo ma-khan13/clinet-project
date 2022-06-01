@@ -260,12 +260,28 @@ p {
 // Footer section scss
 
 .footer-area {
-  position: fixed;
+  //position: fixed;
+
   bottom: 0;
   width: 100%;
   padding: 15px 0;
   border-top: 1px solid #ddd;
-  background-color: white;
+  background-image: linear-gradient(90deg, rgba(0, 139, 139, 0.2), rgba(0, 139, 139, 0.1), rgba(0, 139, 139, 0.2));
+  h6{
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  ul{
+    padding: 0;
+    li{
+      list-style: none;
+      padding: 3px 0;
+      cursor: pointer;
+      &:hover{
+        color: darkcyan;
+      }
+    }
+  }
   .footer-left {
     .footer-link {
       display: flex;
@@ -349,6 +365,17 @@ p {
   box-shadow: 0 0 10px silver;
   border-radius: 10px;
   transition: all .2s ease-in-out;
+  position: relative;
+  .image-container{
+    button{
+      background: transparent;
+      border: none;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      color: red;
+    }
+  }
   .content{
     padding: 15px;
     h6{
@@ -379,4 +406,32 @@ p {
 }
 .slick-dots{
   bottom: 25px!important;
+}
+.category-area{
+  text-align: center;
+  .category-item{
+    text-align: center;
+    border: 1px solid silver;
+    border-radius: 10px;
+    img{
+      width: 35px;
+      margin: 0 auto;
+    }
+    p{
+      font-size: 13px;
+      margin-top: 5px;
+      color: darkcyan;
+      &:hover{
+        color: #004848;
+      }
+    }
+  }
+  .slick-slide {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  //.slick-list {
+  //  margin: 0 -5px;
+  //}
+
 }
