@@ -5,6 +5,7 @@ p {
   margin-bottom: 0;
 }
 
+
 // Top bar scss
 
 .top-bar-container {
@@ -171,6 +172,33 @@ p {
   }
 }
 
+.profile-menu{
+  background-color: #fff;
+  position: fixed;
+  width: 250px;
+  top: 100px;
+  z-index: 9999;
+  right: 115px;
+  padding: 15px 0;
+  border-radius: 7px;
+  box-shadow: 0px 5px 50px 5px rgba(183, 172, 172, 0.423);
+  a{
+    transition: all .5s;
+    padding: 7px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #2e2929;
+    &:hover{
+      background-color: #E9E8E8;
+      color: #352e2e;
+    }
+  }
+  span{
+    background-color: #E9E8E8;
+    height: 1px;
+    margin: 10px 0;
+  }
+}
 // Banner section scss
 .banner img {
   height: 500px;
