@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Profile from "../Pages/Profile/Profile";
+import SearchMenu from "../Pages/SearchMenu/SearchMenu";
 const Navbar = () => {
   const [handleMenoShow, setHandleMenuShow] = useState(false);
+  const [searchMenoShow, setSearchMenoShow] = useState(false);
+  const [active , setActive] = useState('')
   const handleMenuShow = ()=> {
     
     if (handleMenoShow === false) {
@@ -11,6 +14,14 @@ const Navbar = () => {
       setHandleMenuShow(false);
     }
     
+  }
+
+  const handleSearchMenu = () => {
+    if (searchMenoShow === false) {
+      setSearchMenoShow(true);
+    } else {
+      setSearchMenoShow(false);
+    }
   }
   
   return (
@@ -22,12 +33,11 @@ const Navbar = () => {
               <a href="#">TRAVEL TOUR</a>
             </h1>
           </div>
-          <div className="col-md-5 nav-drawer">
+          <div onClick={handleSearchMenu} className="col-md-5 nav-drawer">
             <div className="drawer-item">
-              <p>Anywhere</p>
-              {/* <input type="text" placeholder="Anymhere" /> */}
-              <p>Any week</p>
-              <div className="add-guests">
+              <p onClick={() => setActive("where")}>Anywhere</p>
+              <p onClick={() => setActive("checkIn")}>Any week</p>
+              <div onClick={() => setActive("who")} className="add-guests">
                 <p>Add guests</p>
                 <span>
                   <i className="fa-solid fa-magnifying-glass"></i>
@@ -56,6 +66,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+        {searchMenoShow && <SearchMenu active={active} />}
       </div>
       {handleMenoShow && (
         <div className="profile-menu d-flex flex-column">
@@ -67,9 +78,6 @@ const Navbar = () => {
           <Link to={"/"}>Help</Link>
         </div>
       )}
-      {/* {handleMenoShow && (
-        <Profile></Profile>
-      )} */}
     </nav>
   );
 };

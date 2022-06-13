@@ -199,6 +199,172 @@ p {
     margin: 10px 0;
   }
 }
+.search-menu{
+  background-color: #ffffff;
+  position: absolute;
+  padding: 7px 0;
+  z-index: 99;
+  width: 80vw;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  .search-menu-items{
+    background: #f0f3f3;
+    border: 1px solid rgb(137, 136, 136);
+    border-radius: 17px;
+    .menu-item-container{
+      border-radius: 17px;
+      padding: 5px 15px;
+      cursor: pointer;
+      transition: background .5s;
+      .menu-item{
+        p{
+          margin: 0;
+        }
+        input{
+          border: none;
+          background: transparent;
+          outline: none;
+        }
+        .icon{
+          background: red;
+          padding: 7px 5px;
+          border-radius: 7px;
+          color: white;
+          font-weight: 600;
+        }
+      }
+      // &:hover{
+      //   background: #dae8e8;
+      // }
+    }
+  }
+  .active{
+    background: white;
+    box-shadow: 0 0 15px 0 rgb(227, 221, 221) ;
+  }
+}
+
+.search-region-card{
+  background: #ffffff;
+  position: absolute;
+  top: 75px;
+  left: 180px;
+  padding: 20px 30px !important;
+  border-radius: 30px;
+  box-shadow: 0 0 15px 0 rgb(227, 221, 221) ;
+  .card{
+    width: 120px;
+    background: transparent;
+    border: none;
+    button{
+      border:1px solid transparent;
+      border-radius: 15px;
+      transition: border .5s ;
+      overflow: hidden;
+      &:hover{
+        border:1px solid #2e2929;
+      }
+    }
+  }
+}
+
+.choose-date{
+  background: #ffffff;
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 20px 30px !important;
+  border-radius: 30px;
+  box-shadow: 0 0 15px 0 rgb(227, 221, 221) ;
+  .card{
+    width: 120px;
+    background: transparent;
+    border: none;
+    button{
+      border:1px solid transparent;
+      border-radius: 15px;
+      transition: border .5s ;
+      overflow: hidden;
+      &:hover{
+        border:1px solid #2e2929;
+      }
+    }
+  }
+  .check-in-card , .check-out-card{
+    display: flex;
+    justify-content: center;
+    .react-datepicker{
+      background: transparent;
+      border: none;
+      width: 100% !important;
+      .react-datepicker__month-container{
+        .react-datepicker__header {
+        border: none;
+        background: transparent;
+      }
+      .react-datepicker__day{
+        padding: 5px 25px 5px 13px;
+        display: inline-block;
+        border-radius: 50px;
+      }
+      }
+    }
+  }
+  .btn-choose-package{
+    button{
+      background: transparent;
+      border-radius: 7px;
+      padding:3px 10px;
+      margin: 5px;
+      border: 1px solid rgb(205, 197, 197);
+      transition:border .2s ;
+      &:hover{
+          border: 1px solid rgb(90, 88, 88);
+        }
+    }
+  }
+}
+.guests-card{
+  background: #ffffff;
+  position: absolute;
+  top: 75px;
+  right: 180px;
+  padding: 20px 30px !important;
+  border-radius: 30px;
+  box-shadow: 0 0 15px 0 rgb(227, 221, 221) ;
+  .guests-card-item{
+    padding: 10px 0;
+    .btn-count-container{
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      .btn-increase,.btn-decrease{
+        background: transparent;
+        border: 1px solid rgb(205, 197, 197);
+        border-radius: 50px;
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 7px;
+        color: rgb(59, 58, 58);
+        transition:border .2s ;
+        &:hover{
+          border: 1px solid rgb(90, 88, 88);
+        }
+      }
+      span{
+        margin: 0 10px;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 // Banner section scss
 .banner img {
   height: 500px;
