@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { Button, Form, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Profile from "../Pages/Profile/Profile";
 import SearchMenu from "../Pages/SearchMenu/SearchMenu";
 const Navbar = () => {
   const [handleMenoShow, setHandleMenuShow] = useState(false);
   const [searchMenoShow, setSearchMenoShow] = useState(false);
-  const [active , setActive] = useState('')
+  const [active, setActive] = useState('')
+  
+  const [show, setShow] = useState(false);
+  const [showLogin, setShowLogin] = useState(true);
+  const [showRegister, setShowRegister] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const handleMenuShow = ()=> {
     
     if (handleMenoShow === false) {
@@ -24,6 +31,15 @@ const Navbar = () => {
     }
   }
   
+  const  handleLogin = () => {
+    setShowLogin(true)
+    setShowRegister(false)
+  }
+
+  const handleRegister = () => {
+    setShowLogin(false);
+    setShowRegister(true);
+  };
   return (
     <nav className="nav-area">
       <div className="container">
@@ -70,14 +86,108 @@ const Navbar = () => {
       </div>
       {handleMenoShow && (
         <div className="profile-menu d-flex flex-column">
-          <Link to={"/"}>Sign up</Link>
-          <Link to={"/"}>Log in</Link>
+          <Link onClick={handleShow} to={"/"}>
+            Log in
+          </Link>
+          <Link onClick={handleShow}
+            to={"/"}
+          >
+            Sign up
+          </Link>
           <span></span>
           <Link to={"/"}>Host your home</Link>
           <Link to={"/"}>Host an experience</Link>
           <Link to={"/"}>Help</Link>
         </div>
       )}
+
+      {/* Login form */}
+      <>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header className="border-0" closeButton>
+          </Modal.Header>
+          <Modal.Title className="mx-auto">TRAVEL TOUR</Modal.Title>
+          <Modal.Body>
+            <div className="text-center">
+              <Button
+                className="me-2"
+                variant="secondary"
+                onClick={handleLogin}
+              >
+                Login
+              </Button>
+              <Button variant="primary" onClick={handleRegister}>
+                Register
+              </Button>
+            </div>
+            <Form>
+              {showLogin && (
+                <>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="name@example.com"
+                      autoFocus
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="name@example.com"
+                      autoFocus
+                    />
+                  </Form.Group>
+                </>
+              )}
+              {showRegister && (
+                <>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="name@example.com"
+                      autoFocus
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Phone</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="name@example.com"
+                      autoFocus
+                    />
+                  </Form.Group>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="name@example.com"
+                      autoFocus
+                    />
+                  </Form.Group>
+                </>
+              )}
+            </Form>
+          </Modal.Body>
+        </Modal>
+      </>
     </nav>
   );
 };

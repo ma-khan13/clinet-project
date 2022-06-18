@@ -11,7 +11,7 @@ const Footer = () => {
       <footer>
         <div className="container">
           <div className="row my-5">
-            <div className="col-3">
+            <div className="col-md-2 col-3">
               <h4>Section</h4>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
@@ -42,7 +42,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-3">
+            <div className="col-md-2 col-3">
               <h4>Section</h4>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
@@ -73,7 +73,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-2">
+            <div className="col-md-2 col-3">
               <h4>Section</h4>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
@@ -104,7 +104,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="col-4">
+            <div className="col-12 col-md-4">
               <div className="row">
                 <div className="col-12">
                   <h4 className="mb-3">Download App</h4>

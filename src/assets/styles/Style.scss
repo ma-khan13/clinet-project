@@ -199,6 +199,15 @@ p {
     margin: 10px 0;
   }
 }
+.login-register{
+  position: absolute;
+  background: #008b8b;
+  left: 0;
+  right: 0;
+  transform: translate(50% - 50%);
+}
+
+
 .search-menu{
   background-color: #ffffff;
   position: absolute;
@@ -234,9 +243,6 @@ p {
           font-weight: 600;
         }
       }
-      // &:hover{
-      //   background: #dae8e8;
-      // }
     }
   }
   .active{
@@ -400,7 +406,6 @@ p {
     }
 
     .text-container {
-      //display: flex;
       padding: 0;
       .border-left {
         display: none;
