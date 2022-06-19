@@ -4,10 +4,10 @@ import icon1 from "./../../../assets/images/icons/3.jpg";
 import hostImeg from "../../../assets/images/icons/host.webp";
 const BookingDetails = () => {
   return (
-    <section>
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
+    <section className={'mt-5'}>
+      <div className="container mt-5">
+        <div className="row  mt-5">
+          <div className="col-12  mt-5">
             <h4>Lily Beach Resort & Spa, Maldives, With Pool, AI</h4>
           </div>
           <div className="col-12 mb-3">

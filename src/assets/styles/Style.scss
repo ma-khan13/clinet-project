@@ -52,7 +52,7 @@ p {
 // Nav bar scss
 
 .nav-area {
-  background-color: white;
+  background-color: #eefffe;
   height: 80px;
   width: 100%;
   display: flex;
@@ -596,7 +596,7 @@ p {
       font-size: 14px;
     }
     &:hover{
-       color: rgb(19, 106, 112); 
+       color: rgb(19, 106, 112);
       }
   }
   .slick-prev{
@@ -651,7 +651,7 @@ p {
       animation: newitem 1s infinite alternate;
     }
   }
-  
+
   .content {
     padding: 15px;
     h6 {
@@ -700,4 +700,7 @@ p {
 }
 .slick-dots {
   bottom: 25px !important;
+}
+.logo{
+  width: 170px;
 }

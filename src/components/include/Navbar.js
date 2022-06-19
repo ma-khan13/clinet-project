@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SearchMenu from "../Pages/SearchMenu/SearchMenu";
+import logo from './../../assets/images/logo.jpeg'
 const Navbar = () => {
   const [handleMenoShow, setHandleMenuShow] = useState(false);
   const [searchMenoShow, setSearchMenoShow] = useState(false);
   const [active, setActive] = useState('')
-  
+
   const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const [showRegister, setShowRegister] = useState(false);
@@ -14,13 +15,13 @@ const Navbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleMenuShow = ()=> {
-    
+
     if (handleMenoShow === false) {
       setHandleMenuShow(true);
     } else {
       setHandleMenuShow(false);
     }
-    
+
   }
 
   const handleSearchMenu = () => {
@@ -30,7 +31,7 @@ const Navbar = () => {
       setSearchMenoShow(false);
     }
   }
-  
+
   const  handleLogin = () => {
     setShowLogin(true)
     setShowRegister(false)
@@ -46,7 +47,7 @@ const Navbar = () => {
         <div className="row d-flex justify-content-between">
           <div className="col-md-3 d-md-block nav-logo">
             <h1>
-              <a href="#">TRAVEL TOUR</a>
+              <Link to="/"><img src={logo} alt={'logo'} className={'logo'} /> </Link>
             </h1>
           </div>
           <div onClick={handleSearchMenu} className="col-md-5 nav-drawer">
