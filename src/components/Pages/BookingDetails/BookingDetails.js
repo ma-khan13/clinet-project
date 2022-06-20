@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 import photo from "./../../../assets/images/photographer-407068_1920.jpg";
 import icon1 from "./../../../assets/images/icons/3.jpg";
 import hostImeg from "../../../assets/images/icons/host.webp";
+import user from "../../../assets/images/user.jpg";
+
 const BookingDetails = () => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(null);
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+  };
   return (
-    <section className={'mt-5'}>
+    <section className={"mt-5"}>
       <div className="container mt-5">
         <div className="row  mt-5">
           <div className="col-12  mt-5">
@@ -212,6 +224,31 @@ const BookingDetails = () => {
                         </div>
                       </div>
                     </div>
+
+                    <div className="col-12">
+                      <div className="mt-4">
+                        <h4 className="m-0">5 nights in MV</h4>
+                        <p className="m-0">
+                          <span>Jun 23</span>
+                          <span>2022 - Jun 28</span>
+                          <span> 2022</span>
+                        </p>
+                      </div>
+                      <div className="mt-3">
+                        <div className="col check-in-card">
+                          <DatePicker
+                            className="calender-body"
+                            selected={startDate}
+                            onChange={onChange}
+                            startDate={startDate}
+                            endDate={endDate}
+                            selectsRange
+                            selectsDisabledDaysInRange
+                            inline
+                          />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -268,6 +305,180 @@ const BookingDetails = () => {
                       <span>You won't be charged yet</span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="border-top border-bottom">
+              <div className="d-flex reviews mt-4 align-items-center">
+                <span className="me-1">
+                  <i class="fa-solid fa-star"></i>
+                </span>
+                <h4 className="m-0">4.96 · 126 reviews</h4>
+              </div>
+              <div className="row mt-3 gx-5">
+                <div className="col-6">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0">Cleanliness</p>
+                    <div className="d-flex  align-items-center">
+                      <div
+                        class="progress"
+                        style={{ width: "150px", height: "5px" }}
+                      >
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style={{ width: "95%", background: "black" }}
+                        ></div>
+                      </div>
+                      <span className="ms-1">4.5</span>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0">Communication</p>
+                    <div className="d-flex  align-items-center">
+                      <div
+                        class="progress"
+                        style={{ width: "150px", height: "5px" }}
+                      >
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style={{ width: "100%", background: "black" }}
+                        ></div>
+                      </div>
+                      <span className="ms-1">5.0</span>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0">Cleanliness</p>
+                    <div className="d-flex  align-items-center">
+                      <div
+                        class="progress"
+                        style={{ width: "150px", height: "5px" }}
+                      >
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style={{ width: "80%", background: "black" }}
+                        ></div>
+                      </div>
+                      <span className="ms-1">4.0</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0">Accuracy</p>
+                    <div className="d-flex  align-items-center">
+                      <div
+                        class="progress"
+                        style={{ width: "150px", height: "5px" }}
+                      >
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style={{ width: "100%", background: "black" }}
+                        ></div>
+                      </div>
+                      <span className="ms-1">5.0</span>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0">Location</p>
+                    <div className="d-flex  align-items-center">
+                      <div
+                        class="progress"
+                        style={{ width: "150px", height: "5px" }}
+                      >
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style={{ width: "98%", background: "black" }}
+                        ></div>
+                      </div>
+                      <span className="ms-1">4.9</span>
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <p className="m-0">Value</p>
+                    <div className="d-flex  align-items-center">
+                      <div
+                        class="progress"
+                        style={{ width: "150px", height: "5px" }}
+                      >
+                        <div
+                          class="progress-bar"
+                          role="progressbar"
+                          style={{ width: "100%", background: "black" }}
+                        ></div>
+                      </div>
+                      <span className="ms-1">5.0</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-6 mt-4">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="flex-shrink-0 rounded-pill"
+                      style={{ with: "60px", height: "60px" }}
+                    >
+                      <img
+                        className="rounded-pill"
+                        style={{ width: "100%", height: "100%" }}
+                        src={user}
+                        alt="..."
+                      />
+                    </div>
+                    <div class="flex-grow-1 ms-2">
+                      <h5 className="m-0">Asif</h5>
+                      <small>May 2022</small>
+                    </div>
+                  </div>
+                  <div className="mt-2">
+                    <p className="m-0">
+                      My family and I can not say enough about the wonderful
+                      time we had. You have read the reviews and it is all true.
+                      Simply one of the most relaxing and pampered vacations we
+                    </p>
+                    <a href="">Show more</a>
+                  </div>
+                </div>
+                <div className="col-6 mt-4">
+                  <div class="d-flex align-items-center">
+                    <div
+                      class="flex-shrink-0 rounded-pill"
+                      style={{ with: "60px", height: "60px" }}
+                    >
+                      <img
+                        className="rounded-pill"
+                        style={{ width: "100%", height: "100%" }}
+                        src={user}
+                        alt="..."
+                      />
+                    </div>
+                    <div class="flex-grow-1 ms-2">
+                      <h5 className="m-0">Asif Khan</h5>
+                      <small>Jun 2022</small>
+                    </div>
+                  </div>
+                  <div className="mt-2">
+                    <p className="m-0">
+                      A stay at Floral island is without a doubt a
+                      once-in-a-lifetime experience! Fifteen of us stayed there
+                      for our good friends' joint bachelor/bachelorette party.
+                      The hosts and staff were
+                    </p>
+                    <a href="">Show more</a>
+                  </div>
+                </div>
+                <div className="col-4">
+                  <button className={"view-more-button my-4"}>
+                    Show all 126 reviews
+                  </button>
                 </div>
               </div>
             </div>
