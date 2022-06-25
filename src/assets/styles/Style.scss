@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 $bg_topBar: rgba(241, 235, 235, 0.503);
 $social_hover_color: white;
 $hover_color: rgb(129, 116, 116);
-p {
+body{
+  font-family: 'Poppins', sans-serif;
+  h1,h2,h3,h4,h5{
+    margin-bottom: 0;
+  }
+  p {
   margin-bottom: 0;
 }
+}
+
+
 
 
 // Top bar scss
@@ -371,6 +381,57 @@ p {
   }
 }
 
+.modal-container{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 17px;
+    }
+  }
+  .join-now{
+    .btn-login,.btn-signup{
+      background: #726e6e;
+      color: white;
+      border: 1px solid #2e2929;
+      transition: all 1s;
+      padding: 6px 20px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      box-shadow: none;
+      &:hover{
+        background: transparent;
+        color: #2e2929;
+      }
+    }
+    .btn-active{
+      background: #2e2929;
+    }
+    .input-container{
+      padding: 10px 30px;
+      .input{
+        outline: none;
+        box-shadow: none;
+        letter-spacing: .7px;
+      }
+  }
+  .btn-show-pass{
+    background: #b2b4b8;
+    box-shadow: none;
+    border: none;
+    color: #2e2929;
+    transition: color .3s;
+    i{
+      width: 20px;
+    }
+    &:hover{
+      color: white;
+    }
+  }
+}
+}
+
+
 // Banner section scss
 .banner img {
   height: 500px;
@@ -680,6 +741,76 @@ p {
     transform: scale(1.1);
   }
 }
+
+.single-page-header{
+  .review{
+    width: max-content;
+    padding: 0 0 0 0;
+  }
+  .location{
+    width: max-content;
+    padding: 0;
+  }
+  .btn-shear{
+    border: none;
+    background: transparent;
+    border-radius: 7px;
+    transition:background .3s;
+    a{
+      color: #2e2929;
+    }
+    &:hover{
+      background: #f1f1f1;
+    }
+    
+  }
+}
+
+.single-page-gallery{
+  .image-radius{
+    border-radius: 7px;
+    width: 100%;
+  }
+}
+
+.single-item-container{
+  border-bottom: 1px solid rgb(221, 216, 216);
+  padding: 20px 0;
+  .image-container{
+    width: 60px;
+    height: 60px;
+  }
+  .items-container{
+    margin: 10px 0;
+    .icon{
+      width: 30px;
+      font-size: 25px;
+      text-align: center;
+      margin-right: 5px;
+      color: #626b78;
+    }
+  }
+}
+
+.card-container{
+  .card{
+    border: 1px solid rgb(221, 216, 216);
+    border-radius: 17px;
+    background: transparent;
+    .card-body{
+      padding: 20px 30px;
+      .icon{
+        font-size: 25px;
+        color: #626b78;
+      }
+     .card-text{
+      margin: 5px 0;
+      font-size: 18px;
+     }
+    }
+  }
+}
+
 
 .slick-next {
   right: 25px !important;

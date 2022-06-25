@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { useEffect } from "react";
+import { Button, ButtonGroup, Form, InputGroup, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SearchMenu from "../Pages/SearchMenu/SearchMenu";
 import logo from './../../assets/images/logo.jpeg'
@@ -7,7 +8,9 @@ const Navbar = () => {
   const [handleMenoShow, setHandleMenuShow] = useState(false);
   const [searchMenoShow, setSearchMenoShow] = useState(false);
   const [active, setActive] = useState('')
+  const [btnActive , setBtnActive] = useState('btn-active')
 
+  const [showPassword , setShowPassword] = useState('password')
   const [show, setShow] = useState(false);
   const [showLogin, setShowLogin] = useState(true);
   const [showRegister, setShowRegister] = useState(false);
@@ -35,19 +38,31 @@ const Navbar = () => {
   const  handleLogin = () => {
     setShowLogin(true)
     setShowRegister(false)
+    setBtnActive('btn-active')
   }
 
   const handleRegister = () => {
     setShowLogin(false);
+    setBtnActive("btn-active");
     setShowRegister(true);
   };
+
+  const handleShowPassword = () => {
+    if (showPassword === 'password') {
+      setShowPassword('text')
+    } else {
+      setShowPassword("password");
+    }
+  }
   return (
     <nav className="nav-area">
       <div className="container">
         <div className="row d-flex justify-content-between">
           <div className="col-md-3 d-md-block nav-logo">
             <h1>
-              <Link to="/"><img src={logo} alt={'logo'} className={'logo'} /> </Link>
+              <Link to="/">
+                <img src={logo} alt={"logo"} className={"logo"} />{" "}
+              </Link>
             </h1>
           </div>
           <div onClick={handleSearchMenu} className="col-md-5 nav-drawer">
@@ -88,12 +103,7 @@ const Navbar = () => {
       {handleMenoShow && (
         <div className="profile-menu d-flex flex-column">
           <Link onClick={handleShow} to={"/"}>
-            Log in
-          </Link>
-          <Link onClick={handleShow}
-            to={"/"}
-          >
-            Sign up
+            Log in OR Sign up
           </Link>
           <span></span>
           <Link to={"/"}>Host your home</Link>
@@ -104,84 +114,124 @@ const Navbar = () => {
 
       {/* Login form */}
       <>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header className="border-0" closeButton>
-          </Modal.Header>
-          <Modal.Title className="mx-auto">TRAVEL TOUR</Modal.Title>
-          <Modal.Body>
+        <Modal
+          onClick={() => setHandleMenuShow(false)}
+          className="modal-container"
+          show={show}
+          onHide={handleClose}
+        >
+          <Modal.Header className="border-0" closeButton></Modal.Header>
+          <Modal.Title className="mx-auto text-uppercase">
+            {!showLogin ? (
+              <h2>
+                Join now <span style={{ color: "red" }}>day</span>funa
+              </h2>
+            ) : (
+              <h2>
+                Welcome to <span style={{ color: "red" }}>day</span>funa
+              </h2>
+            )}
+          </Modal.Title>
+          <Modal.Body className="join-now">
             <div className="text-center">
-              <Button
-                className="me-2"
-                variant="secondary"
-                onClick={handleLogin}
-              >
-                Login
-              </Button>
-              <Button variant="primary" onClick={handleRegister}>
-                Register
-              </Button>
+              <ButtonGroup className="mb-2">
+                <Button
+                  onClick={handleLogin}
+                  className={`btn-login ${
+                    showLogin ? btnActive : '' }`}
+                >
+                  Log in
+                </Button>
+                <Button
+                  onClick={handleRegister}
+                  className={`btn-signup ${!showLogin ? btnActive : ""}`}
+                >
+                  Sign up
+                </Button>
+              </ButtonGroup>
             </div>
-            <Form>
+            <Form className="input-container">
               {showLogin && (
                 <>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
+                  <Form.Group className="mb-3">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
+                      className="input"
                       type="email"
-                      placeholder="name@example.com"
+                      placeholder="Enter Email or Phone"
                       autoFocus
                     />
                   </Form.Group>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
+                  <Form.Group>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type="email"
-                      placeholder="name@example.com"
-                      autoFocus
-                    />
+                    <InputGroup className="mb-3">
+                      <Form.Control
+                        className="input"
+                        type={showPassword}
+                        placeholder="Enter your password"
+                      />
+                      <Button
+                        onClick={handleShowPassword}
+                        className="btn-show-pass input"
+                        id="button-addon2"
+                      >
+                        {showPassword === "password" ? (
+                          <i class="fa-solid fa-eye"></i>
+                        ) : (
+                          <i class="fa-solid fa-eye-slash"></i>
+                        )}
+                      </Button>
+                    </InputGroup>
                   </Form.Group>
                 </>
               )}
               {showRegister && (
                 <>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
+                  <Form.Group className="mb-3">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control
+                      className="input"
+                      type="text"
+                      placeholder="Enter your name"
+                      autoFocus
+                    />
+                  </Form.Group>
+                  <Form.Group className="mb-3">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
+                      className="input"
                       type="email"
-                      placeholder="name@example.com"
-                      autoFocus
+                      placeholder="Enter your email"
                     />
                   </Form.Group>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
+                  <Form.Group className="mb-3">
                     <Form.Label>Phone</Form.Label>
                     <Form.Control
-                      type="email"
-                      placeholder="name@example.com"
-                      autoFocus
+                      className="input"
+                      type="text"
+                      placeholder="Enter your phone"
                     />
                   </Form.Group>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
+                  <Form.Group>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      type="email"
-                      placeholder="name@example.com"
-                      autoFocus
-                    />
+                    <InputGroup className="mb-3">
+                      <Form.Control
+                        className="input"
+                        type={showPassword}
+                        placeholder="Enter your password"
+                      />
+                      <Button
+                        onClick={handleShowPassword}
+                        className="btn-show-pass input"
+                        id="button-addon2"
+                      >
+                        {showPassword === "password" ? (
+                          <i class="fa-solid fa-eye"></i>
+                        ) : (
+                          <i class="fa-solid fa-eye-slash"></i>
+                        )}
+                      </Button>
+                    </InputGroup>
                   </Form.Group>
                 </>
               )}
